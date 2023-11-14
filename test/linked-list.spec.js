@@ -1,5 +1,37 @@
 const {LinkedList, Node} = require('../src/linked-list');
 
+// ## Linked Lists
+
+// A **Linked List** is a data structure, meaning a concrete programmatic way of managing information in memory. They can be used to implement a number of ADTs, including Queues, Stacks, Lists, and others.
+
+// Linked Lists are collections of *nodes* — wrapper structures which encapsulate a `value` and one or more *pointers* (references) to other nodes. The Linked List instance typically only has a reference to a so-called *handle* node, e.g. the `head` (first node) — it has no direct knowledge of other nodes in the list. However, the handle then points to a `next` node, which itself points to another `next` node, and so on and so forth. A list ends when a node's `next` pointer is `null` or `undefined`. The act of starting from a handle and visiting nodes in sequence is known as "traversing" a linked list.
+
+// Below is a description of a singly-linked list with a `head` handle and three nodes total:
+
+// ```
+// Head reference -> Node A
+// Node A has value 56 and pointer next -> Node B
+// Node B has value 33 and pointer next -> Node C
+// Node C has value 12 and pointer next -> null
+// ```
+
+// ```
+// HEAD  ────┐                                 ┌──── TAIL
+//           │                                 │
+//           │                                 │
+//           ▼                                 ▼
+//      ┌────┬────┐      ┌────┬────┐      ┌────┬────┐
+//      │    │    │      │    │    │      │    │    │
+//      │ 56 │  ──┼────> │ 33 │  ──┼────> │ 12 │  ──┼───> NULL
+//      │    │    │      │    │    │      │    │    │
+//      └────┴────┘      └────┴────┘      └────┴────┘
+// ```
+
+// Linked Lists can come in various flavors. For example, in doubly-linked lists, each node might point both to the `next` node and to the `previous` node as well. In some variations, the parent Linked List instance might maintain both `head` *and* `tail` references. For this workshop, follow the (opinionated) spec to implement a doubly-linked list with both handles.
+
+// *Side note: in JavaScript, an object is maintained in memory so long as there exist references to it. Once an object has no references pointing to it, automatic garbage collection will eventually free that memory so that the program can use it for other variables (it does not matter if the object itself has references to other variables). So the only real way to "delete" an object in JS to remove all references to it.*
+
+
 describe("Node", () => {
   test('should take a value argument in the constructor and define next and previous to be null by default', () => {
     const node = new Node('test')
@@ -183,6 +215,11 @@ describe("Linked List", () => {
     linkedList.removeTail()
     expect(linkedList.removeTail()).toEqual(null)
   })
+
+      // The `search` method takes a "comparator" as a parameter, traverses the linked list, and returns the `value` of the matching node if found, or `null` if not found.
+    // The "comparator" could be a string or a function.
+    // When the comparator is a string, the `search` method will compare each node's `value` with the comparator string.
+    // When the comparator is a function, that function will accept a value as a parameter and return a boolean indicating if the value is a match. The `search` method will use the comparator function on each node's `value` to determine if it is a match.
 
   test('should return the correct values when searching for a string or number', () => {
     linkedList.addToTail('one')
