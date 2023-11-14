@@ -1,13 +1,16 @@
-# Linked Lists
+# Test-Driven Development: Linked List and BST
+
+**Note: be sure to read this README.md thoroughly, as well as the comments in the test spec**
+
+In this portion of the workshop, we are going to be writing the JavaScript implementation of a Linked List and a Binary Search Tree.
+Don't forget to install the dependencies: `npm install`, and then run the tests with `npm test`.
+This is a test-driven workshop, so you'll be writing code to make the provided tests pass.
+
+## Linked Lists
 
 Abstract Data Types (ADTs) are purely conceptual entities comprising information and allowed operations on that information. Data Structures (DSs) are actual programmatic solutions to implement an ADT. Both are very important to computer science in general and also a great way to better understand Object-Oriented Programming (OOP).
 
 In this workshop, we are going to be writing the JavaScript implementations of some different ADTs and DSs. In the first part of this workshop, we will focus on Linked Lists. In the second part of this workshop, we will shift our attention towards Binary Search Trees.
-
-## Getting Started
-
-Don't forget to install the dependencies: `npm install`, and then run the tests with `npm test`.
-This is a test-driven workshop, so you'll be writing code to make the provided tests pass.
 
 ### The Linked List DS
 
@@ -16,18 +19,7 @@ The LL operations are far easier to understand and account for if you diagram ou
 Compare the LL to the classic contiguous fixed Array (which does not exist in ES5 JavaScript). What are the pros and cons of each, and why?
 
 
-# Test-First Binary Search Tree
-
-**Note: be sure to read this README.md thoroughly, as well as the comments in the test spec**
-
-In this portion of the workshop, we are going to be writing the JavaScript implementation of a Binary Search Tree.
-
-## Running
-
-1. Run `npm install` to install dependencies
-2. Run `npm test` to run the specs and watch for changes
-
-### Binary Search Tree DS
+## Binary Search Trees
 
 When we implemented our Linked List, we had a central `LinkedList` object that had "handles" on the head and tail `Nodes`, which in turn "pointed" to the next and previous `Node` in the list.
 
