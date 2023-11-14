@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Linked Lists and Binary Search Trees",
   "scripts": {
-    "test-ll": "mocha --timeout 5000 ./test/linked-list.spec.js --watch",
-    "test-bst": "mocha --timeout 5000 ./test/bst.spec.js --watch"
+    "test": "jest"
   },
   "devDependencies": {
     "jest": "^29.7.0"
